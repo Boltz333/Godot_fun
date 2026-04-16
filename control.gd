@@ -1,24 +1,35 @@
 extends Control
 
-var score = 0
-var Coffee = 0
-
-
-
-
-
-func _ready():
-	update_score()
-
+var bean = 0
+var coffee = 0
+var water = 0
+var cupofcoffee = 0
+var money = 0
 
 func _on_button_pressed():
-	score += 1
-	update_score()
-	if score == 10:
-		score = 0
-		Coffee += 1
-		$Coffee.text = "Coffee: " + str(Coffee)
+	bean += 1
+	$bean.text = "Bean: " + str(bean)
+	if bean == 10:
+		bean = 0
+		coffee += 1
+		$coffee.text = "coffee: " + str(coffee)
 
-func update_score():
-	$Score.text = "Score: " + str(score)
+
+func _on_timer_timeout():
+	print("Water generated!")
+	water += 1
+	$water.text = "Water: " + str(water)
+	create_hot_coffee()
+
+func create_hot_coffee():
+	if coffee >= 10 and water >= 2:
+		coffee -= 10 
+		water -= 2
+		cupofcoffee += 1
+		$cupofcoffee.text = "Cupofcoffee: " + str(cupofcoffee)
+
+func _on_sell_coffee_pressed():
+	cupofcoffee -= 1
+	money += 1
+	$money.text = "Cash $: " + str(money)
 	
