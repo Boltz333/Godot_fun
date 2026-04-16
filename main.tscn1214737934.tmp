@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://sw1feuos37av" path="res://control.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://d1mli4ilk5pyq" path="res://pictures/Coffee.png" id="2_0xm2m"]
+
+[node name="Node2D" type="Node2D" unique_id=619618116]
+position = Vector2(3, 8)
+
+[node name="Control" type="Control" parent="." unique_id=256977029]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -102.0
+offset_top = 19.0
+offset_right = -62.0
+offset_bottom = 59.0
+script = ExtResource("1_ig7tw")
+
+[node name="Score" type="Label" parent="Control" unique_id=1109461341]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.228
+anchor_top = -0.842
+anchor_right = 15.228
+anchor_bottom = -0.842
+offset_left = 34.879997
+offset_top = 35.68
+offset_right = 95.88
+offset_bottom = 58.68
+text = "Score: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Coffee" type="Label" parent="Control" unique_id=504540207]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 36.0
+offset_right = 709.0
+offset_bottom = 74.0
+text = "Coffee: 0"
+
+[node name="Button" type="Button" parent="Control" unique_id=521894745]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 143.0
+offset_right = 865.0
+offset_bottom = 511.0
+icon = ExtResource("2_0xm2m")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
