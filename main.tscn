@@ -4,6 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://d1mli4ilk5pyq" path="res://pictures/Coffee.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://dgk7jvl8dc8mc" path="res://timer.gd" id="3_h2yge"]
 
+[sub_resource type="FontFile" id="FontFile_h2yge"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font = SubResource("FontFile_h2yge")
+font_size = 34
+font_color = Color(0.31835833, 0.8191991, 0, 1)
+
 [node name="Node2D" type="Node2D" unique_id=619618116]
 position = Vector2(3, 8)
 
@@ -45,6 +71,7 @@ offset_top = 143.0
 offset_right = 865.0
 offset_bottom = 511.0
 icon = ExtResource("2_0xm2m")
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Control" unique_id=702455298]
@@ -62,10 +89,10 @@ text = "Water: 0"
 
 [node name="cupofcoffee" type="Label" parent="Control" unique_id=1245964426]
 layout_mode = 0
-offset_left = 163.0
-offset_top = -13.0
-offset_right = 261.0
-offset_bottom = 10.0
+offset_left = 492.0
+offset_top = 2.0
+offset_right = 590.0
+offset_bottom = 25.0
 text = "Hot coffee: 0"
 
 [node name="sell_coffee" type="Button" parent="Control" unique_id=1148750308]
@@ -81,11 +108,12 @@ text = "Sell"
 
 [node name="money" type="Label" parent="Control" unique_id=349490042]
 layout_mode = 0
-offset_left = 102.0
-offset_top = -19.0
-offset_right = 142.0
-offset_bottom = 4.0
+offset_left = 1079.0
+offset_top = 4.0
+offset_right = 1179.0
+offset_bottom = 50.0
 text = "Cash $"
+label_settings = SubResource("LabelSettings_1bvp3")
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

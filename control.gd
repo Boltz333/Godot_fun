@@ -29,7 +29,7 @@ func create_hot_coffee():
 		$cupofcoffee.text = "Cupofcoffee: " + str(cupofcoffee)
 
 func _on_sell_coffee_pressed():
-	cupofcoffee -= 1
-	money += 1
-	$money.text = "Cash $: " + str(money)
-	
+	if cupofcoffee >=0:
+		cupofcoffee -= 1
+		money += 1
+		$money.text = "Cash $: " + str(money)
