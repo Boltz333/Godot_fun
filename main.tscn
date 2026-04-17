@@ -108,10 +108,10 @@ text = "Sell"
 
 [node name="money" type="Label" parent="Control" unique_id=349490042]
 layout_mode = 0
-offset_left = 1079.0
-offset_top = 4.0
-offset_right = 1179.0
-offset_bottom = 50.0
+offset_left = 987.0
+offset_top = 1.0
+offset_right = 1087.0
+offset_bottom = 47.0
 text = "Cash $"
 label_settings = SubResource("LabelSettings_1bvp3")
 

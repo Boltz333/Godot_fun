@@ -6,6 +6,7 @@ var water = 0
 var cupofcoffee = 0
 var money = 0
 
+
 func _on_button_pressed():
 	bean += 1
 	$bean.text = "Bean: " + str(bean)
@@ -19,17 +20,20 @@ func _on_timer_timeout():
 	print("Water generated!")
 	water += 1
 	$water.text = "Water: " + str(water)
-	create_hot_coffee()
+	_create_hot_coffee()
 
-func create_hot_coffee():
-	if coffee >= 10 and water >= 2:
+func _create_hot_coffee():
+	while coffee >= 10 and water >= 2:
 		coffee -= 10 
 		water -= 2
+		$water.text = "Water: " + str(water)
 		cupofcoffee += 1
+		print("completed")
 		$cupofcoffee.text = "Cupofcoffee: " + str(cupofcoffee)
 
 func _on_sell_coffee_pressed():
-	if cupofcoffee >=0:
+	if cupofcoffee >=1:
 		cupofcoffee -= 1
 		money += 1
+		$cupofcoffee.text = "Cupofcoffee: " + str(cupofcoffee)
 		$money.text = "Cash $: " + str(money)
