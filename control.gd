@@ -5,7 +5,7 @@ var coffee = 0
 var water = 0
 var cupofcoffee = 0
 var money = 0
-
+var upgraded_once = false
 
 func _on_button_pressed():
 	bean += 1
@@ -37,3 +37,13 @@ func _on_sell_coffee_pressed():
 		money += 1
 		$cupofcoffee.text = "Cupofcoffee: " + str(cupofcoffee)
 		$money.text = "Cash $: " + str(money)
+
+
+func _on_upgrade_water_pressed() -> void:
+	if money >= 10:
+		money -= 10
+		$Timer.wait_time = 8
+		$Timer.start()
+		upgraded_once = true
+		$money.text = "Cash $: " + str(money)
+		

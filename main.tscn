@@ -42,6 +42,14 @@ offset_right = -62.0
 offset_bottom = 59.0
 script = ExtResource("1_ig7tw")
 
+[node name="upgrade_water" type="Button" parent="Control" unique_id=393647513]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 85.0
+offset_right = 363.0
+offset_bottom = 116.0
+text = "Upgrade watertime"
+
 [node name="bean" type="Label" parent="Control" unique_id=1109461341]
 layout_mode = 1
 anchors_preset = -1
@@ -115,6 +123,7 @@ offset_bottom = 47.0
 text = "Cash $"
 label_settings = SubResource("LabelSettings_1bvp3")
 
+[connection signal="pressed" from="Control/upgrade_water" to="Control" method="_on_upgrade_water_pressed"]
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="Control/sell_coffee" to="Control" method="_on_sell_coffee_pressed"]
