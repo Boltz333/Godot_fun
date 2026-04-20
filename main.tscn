@@ -123,7 +123,13 @@ offset_bottom = 47.0
 text = "Cash $"
 label_settings = SubResource("LabelSettings_1bvp3")
 
+[node name="upgrade_bean" type="Button" parent="Control" unique_id=1790783454]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="Control/upgrade_water" to="Control" method="_on_upgrade_water_pressed"]
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="Control/sell_coffee" to="Control" method="_on_sell_coffee_pressed"]
+[connection signal="pressed" from="Control/upgrade_bean" to="Control" method="_on_upgrade_bean_pressed"]

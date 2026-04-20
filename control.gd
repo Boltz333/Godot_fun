@@ -46,4 +46,10 @@ func _on_upgrade_water_pressed() -> void:
 		$Timer.start()
 		upgraded_once = true
 		$money.text = "Cash $: " + str(money)
+
+func _on_upgrade_bean_pressed() -> void:
+	if money >= 5:
+		money -= 5
+		bean += 2
 		
+	pass # Replace with function body.
