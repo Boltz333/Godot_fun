@@ -53,10 +53,10 @@ text = "Upgrade watertime"
 [node name="bean" type="Label" parent="Control" unique_id=1109461341]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 15.228
-anchor_top = -0.842
-anchor_right = 15.228
-anchor_bottom = -0.842
+anchor_left = 15.3029995
+anchor_top = -1.267
+anchor_right = 15.3029995
+anchor_bottom = -1.267
 offset_left = 34.879997
 offset_top = 35.68
 offset_right = 95.88
@@ -66,14 +66,19 @@ metadata/_edit_use_anchors_ = true
 
 [node name="coffee" type="Label" parent="Control" unique_id=504540207]
 layout_mode = 0
-offset_left = 641.0
-offset_top = 36.0
-offset_right = 709.0
-offset_bottom = 74.0
+offset_left = 643.0
+offset_top = 65.0
+offset_right = 711.0
+offset_bottom = 103.0
 text = "Coffee: 0"
 
 [node name="Button" type="Button" parent="Control" unique_id=521894745]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.225
+anchor_top = 0.125
+anchor_right = -0.225
+anchor_bottom = 0.125
 offset_left = 497.0
 offset_top = 143.0
 offset_right = 865.0
@@ -90,17 +95,17 @@ script = ExtResource("3_h2yge")
 [node name="water" type="Label" parent="Control" unique_id=2129316658]
 layout_mode = 0
 offset_left = 644.0
-offset_top = 79.0
+offset_top = 23.0
 offset_right = 725.0
-offset_bottom = 124.0
+offset_bottom = 67.0
 text = "Water: 0"
 
-[node name="cupofcoffee" type="Label" parent="Control" unique_id=1245964426]
+[node name="hotcoffee" type="Label" parent="Control" unique_id=1245964426]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 2.0
-offset_right = 590.0
-offset_bottom = 25.0
+offset_left = 494.0
+offset_top = 39.0
+offset_right = 592.0
+offset_bottom = 62.0
 text = "Hot coffee: 0"
 
 [node name="sell_coffee" type="Button" parent="Control" unique_id=1148750308]
@@ -125,11 +130,19 @@ label_settings = SubResource("LabelSettings_1bvp3")
 
 [node name="upgrade_bean" type="Button" parent="Control" unique_id=1790783454]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 204.0
+offset_top = 125.0
+offset_right = 363.0
+offset_bottom = 156.0
+text = "upgrade bean"
+
+[node name="boiler_timer" type="Timer" parent="Control" unique_id=883607084]
+wait_time = 20.0
+autostart = true
 
 [connection signal="pressed" from="Control/upgrade_water" to="Control" method="_on_upgrade_water_pressed"]
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="Control/sell_coffee" to="Control" method="_on_sell_coffee_pressed"]
 [connection signal="pressed" from="Control/upgrade_bean" to="Control" method="_on_upgrade_bean_pressed"]
+[connection signal="timeout" from="Control/boiler_timer" to="Control" method="_on_boiler_timer_timeout"]
