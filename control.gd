@@ -1,5 +1,6 @@
 extends Control
 
+
 var score_bean = 0
 var bean_value = 1
 var coffee = 0
@@ -7,7 +8,7 @@ var water = 0
 var hotcoffee = 0
 var money = 0
 var boiler_busy = false
-
+var grinder = false
 
 func _on_button_pressed():
 	score_bean += bean_value
@@ -31,6 +32,11 @@ func _on_sell_coffee_pressed():
 		hotcoffee -= 1
 		money += 5
 		$hotcoffee.text = "Hotcoffee: " + str(hotcoffee)
+		$money.text = "Cash $: " + str(money)
+	if coffee >= 1:
+		coffee -= 1
+		money += 1
+		$coffee.text = "coffee: " + str(coffee)
 		$money.text = "Cash $: " + str(money)
 
 
@@ -65,3 +71,21 @@ func _on_boiler_timer_timeout():
 	$hotcoffee.text = "Hotcoffee: " + str(hotcoffee)
 	if coffee >= 1:
 		start_boiler()
+
+
+func _on_buy_grinder_pressed():
+	if money >= 10 and not grinder:
+		money -= 10
+		grinder = true
+		$money.text = "Cash $: " + str(money)
+		$grinder_timer.wait_time = 5
+		$grinder_timer.start()
+		
+
+func _on_grinder_timer_timeout():
+	if grinder:
+		score_bean += 1
+		$bean.text = "Bean: " + str(score_bean)
+		$grinder_timer.start()
+	else:
+		$grinder_timer.stop()

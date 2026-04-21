@@ -140,9 +140,21 @@ text = "upgrade bean"
 wait_time = 20.0
 autostart = true
 
+[node name="grinder_timer" type="Timer" parent="Control" unique_id=224319858]
+
+[node name="buy_grinder" type="Button" parent="Control" unique_id=790566276]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 14.0
+offset_right = 355.0
+offset_bottom = 54.0
+text = "buy grinder"
+
 [connection signal="pressed" from="Control/upgrade_water" to="Control" method="_on_upgrade_water_pressed"]
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
 [connection signal="pressed" from="Control/sell_coffee" to="Control" method="_on_sell_coffee_pressed"]
 [connection signal="pressed" from="Control/upgrade_bean" to="Control" method="_on_upgrade_bean_pressed"]
 [connection signal="timeout" from="Control/boiler_timer" to="Control" method="_on_boiler_timer_timeout"]
+[connection signal="timeout" from="Control/grinder_timer" to="Control" method="_on_grinder_timer_timeout"]
+[connection signal="pressed" from="Control/buy_grinder" to="Control" method="_on_buy_grinder_pressed"]
