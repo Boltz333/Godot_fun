@@ -101,11 +101,14 @@ offset_bottom = 67.0
 text = "Water: 0"
 
 [node name="hotcoffee" type="Label" parent="Control" unique_id=1245964426]
-layout_mode = 0
-offset_left = 494.0
-offset_top = 39.0
-offset_right = 592.0
-offset_bottom = 62.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 8.254001
+anchor_bottom = 5.1580005
+offset_left = 482.0
+offset_top = 35.0
+offset_right = 249.83997
+offset_bottom = -148.32002
 text = "Hot coffee: 0"
 
 [node name="sell_coffee" type="Button" parent="Control" unique_id=1148750308]
