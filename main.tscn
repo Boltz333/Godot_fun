@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://sw1feuos37av" path="res://control.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://d1mli4ilk5pyq" path="res://pictures/Coffee.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://dgk7jvl8dc8mc" path="res://timer.gd" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://4yjdm4c3hxbx" path="res://pictures/Hot coffee.png" id="4_1bvp3"]
 
 [sub_resource type="FontFile" id="FontFile_h2yge"]
 cache/0/variation_coordinates = {}
@@ -44,19 +45,19 @@ script = ExtResource("1_ig7tw")
 
 [node name="upgrade_water" type="Button" parent="Control" unique_id=393647513]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 85.0
-offset_right = 363.0
-offset_bottom = 116.0
+offset_left = 996.0
+offset_top = 577.0
+offset_right = 1155.0
+offset_bottom = 608.0
 text = "Upgrade watertime"
 
 [node name="bean" type="Label" parent="Control" unique_id=1109461341]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 15.3029995
-anchor_top = -1.267
-anchor_right = 15.3029995
-anchor_bottom = -1.267
+anchor_left = 4.1029997
+anchor_top = 0.333
+anchor_right = 4.1029997
+anchor_bottom = 0.333
 offset_left = 34.879997
 offset_top = 35.68
 offset_right = 95.88
@@ -66,10 +67,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="coffee" type="Label" parent="Control" unique_id=504540207]
 layout_mode = 0
-offset_left = 643.0
-offset_top = 65.0
-offset_right = 711.0
-offset_bottom = 103.0
+offset_left = 441.0
+offset_top = 52.0
+offset_right = 509.0
+offset_bottom = 75.0
 text = "Coffee: 0"
 
 [node name="Button" type="Button" parent="Control" unique_id=521894745]
@@ -94,10 +95,10 @@ script = ExtResource("3_h2yge")
 
 [node name="water" type="Label" parent="Control" unique_id=2129316658]
 layout_mode = 0
-offset_left = 644.0
-offset_top = 23.0
-offset_right = 725.0
-offset_bottom = 67.0
+offset_left = 321.0
+offset_top = 49.0
+offset_right = 402.0
+offset_bottom = 73.0
 text = "Water: 0"
 
 [node name="hotcoffee" type="Label" parent="Control" unique_id=1245964426]
@@ -105,10 +106,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 8.254001
 anchor_bottom = 5.1580005
-offset_left = 482.0
-offset_top = 35.0
-offset_right = 249.83997
-offset_bottom = -148.32002
+offset_left = 899.0
+offset_top = 75.0
+offset_right = 666.83997
+offset_bottom = -108.32002
 text = "Hot coffee: 0"
 
 [node name="sell_coffee" type="Button" parent="Control" unique_id=1148750308]
@@ -116,27 +117,27 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.77500004
-offset_left = 216.0
-offset_top = 267.0
-offset_right = 312.0
-offset_bottom = 356.0
+offset_left = 197.0
+offset_top = 471.0
+offset_right = 293.0
+offset_bottom = 560.0
 text = "Sell"
 
 [node name="money" type="Label" parent="Control" unique_id=349490042]
 layout_mode = 0
-offset_left = 987.0
-offset_top = 1.0
-offset_right = 1087.0
-offset_bottom = 47.0
+offset_left = 1044.0
+offset_top = -9.0
+offset_right = 1183.0
+offset_bottom = 37.0
 text = "Cash $"
 label_settings = SubResource("LabelSettings_1bvp3")
 
 [node name="upgrade_bean" type="Button" parent="Control" unique_id=1790783454]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 125.0
-offset_right = 363.0
-offset_bottom = 156.0
+offset_left = 997.0
+offset_top = 533.0
+offset_right = 1156.0
+offset_bottom = 564.0
 text = "upgrade bean"
 
 [node name="boiler_timer" type="Timer" parent="Control" unique_id=883607084]
@@ -147,11 +148,16 @@ autostart = true
 
 [node name="buy_grinder" type="Button" parent="Control" unique_id=790566276]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 14.0
-offset_right = 355.0
-offset_bottom = 54.0
+offset_left = 1002.0
+offset_top = 473.0
+offset_right = 1160.0
+offset_bottom = 513.0
 text = "buy grinder"
+
+[node name="HotCoffee" type="Sprite2D" parent="Control" unique_id=198476577]
+position = Vector2(951, 54)
+scale = Vector2(0.31650007, 0.34299996)
+texture = ExtResource("4_1bvp3")
 
 [connection signal="pressed" from="Control/upgrade_water" to="Control" method="_on_upgrade_water_pressed"]
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
